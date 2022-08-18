@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class CadastroSimples {
@@ -35,7 +36,11 @@ public class CadastroSimples {
             do {
                 System.out.print("Digite seu gênero ('M' ou 'F'): ");
                 sexo = entrada.next();
-                if (sexo.equalsIgnoreCase("f") || sexo.equalsIgnoreCase("m")) {
+                if (sexo.equalsIgnoreCase("f")) {
+                    sexo = ("Feminino");
+                    infoValida = true;
+                } else if (sexo.equalsIgnoreCase("m" )) {
+                    sexo = ("Masculino");
                     infoValida = true;
                 } else {
                     System.out.println("Gênero inválido. Tente novamente.");
@@ -46,12 +51,23 @@ public class CadastroSimples {
             do {
                 System.out.print("Digite seu estado civil ('C', 'S', 'D' ou 'V'): ");
                 estadoCivil = entrada.next();
-                if (estadoCivil.equalsIgnoreCase("c") ||
-                        estadoCivil.equalsIgnoreCase("s") ||
-                        estadoCivil.equalsIgnoreCase("d") ||
-                        estadoCivil.equalsIgnoreCase("v")) {
+                if    ( estadoCivil.equalsIgnoreCase("c")) {
+                    estadoCivil = ("Casado");
                     infoValida = true;
-                } else {
+                }
+                else if (estadoCivil.equalsIgnoreCase("s")) {
+                    estadoCivil = ("Solteiro");
+                    infoValida = true;
+                }
+                else if (estadoCivil.equalsIgnoreCase("d")) {
+                    estadoCivil = ("Divorciado");
+                    infoValida = true;
+                }
+               else if (estadoCivil.equalsIgnoreCase("v")) {
+                estadoCivil = ("Viuvo (a)");
+                infoValida = true;
+                }
+               else {
                     System.out.println("Estado Civil invalido. Tente novamente.");
                 }
             } while (!infoValida);
@@ -67,20 +83,28 @@ public class CadastroSimples {
                 }
             } while (!infoValida);
 
+            infoValida = false;
             System.out.println("As seguintes informações foram preenchidas: ");
+            System.out.println("============================");
             System.out.println("Nome: " + nome);
-            System.out.println("Idade: " + idade);
+            System.out.println("Idade: " + idade + (" anos"));
             System.out.println("Gênero: " + sexo);
             System.out.println("Estado Civil: " + estadoCivil);
             System.out.println("Salario: R$ " + salario);
-
+            System.out.println("============================");
             System.out.println("Deseja continuar? ('S' ou 'N')");
             confirmacao = entrada.next();
             if (confirmacao.equalsIgnoreCase("S")) {
                 infoValida = true;
                 System.out.println("Cadastro encerrado. Obrigado!");
-            }  else {
+            }  else if (confirmacao.equalsIgnoreCase("N")) {
                 i--;
+                System.out.println("Cadastro reiniciado. Preencha as informações novamente!!");
+            } else {
+                System.out.println("Opção invalida, digite 'S' para SIM ou 'N' para NÃO.");
+            /* else {
+                System.out.println("Cadastro reiniciado. Preencha as informações novamente!!");
+                i--;*/
             }
         }
     }
