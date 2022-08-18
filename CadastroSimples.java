@@ -51,15 +51,15 @@ public class CadastroSimples {
                 System.out.print("Digite seu estado civil ('C', 'S', 'D' ou 'V'): ");
                 estadoCivil = entrada.next();
                 if    ( estadoCivil.equalsIgnoreCase("c")) {
-                    estadoCivil = ("Casado");
+                    estadoCivil = ("Casado (a)");
                     infoValida = true;
                 }
                 else if (estadoCivil.equalsIgnoreCase("s")) {
-                    estadoCivil = ("Solteiro");
+                    estadoCivil = ("Solteiro (a)");
                     infoValida = true;
                 }
                 else if (estadoCivil.equalsIgnoreCase("d")) {
-                    estadoCivil = ("Divorciado");
+                    estadoCivil = ("Divorciado (a)");
                     infoValida = true;
                 }
                else if (estadoCivil.equalsIgnoreCase("v")) {
