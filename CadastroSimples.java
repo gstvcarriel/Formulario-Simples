@@ -102,9 +102,6 @@ public class CadastroSimples {
                 System.out.println("Cadastro reiniciado. Preencha as informações novamente!!");
             } else {
                 System.out.println("Opção invalida, digite 'S' para SIM ou 'N' para NÃO.");
-            /* else {
-                System.out.println("Cadastro reiniciado. Preencha as informações novamente!!");
-                i--;*/
             }
         }
     }
